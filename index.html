@@ -25,7 +25,27 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
 </head>
 
-<body>
+<body class="is-loading">
+
+  <!--
+    - #LANGUAGE TOGGLE
+  -->
+
+  <button class="lang-toggle" id="langToggle" type="button" data-lang-toggle aria-label="Switch language / Ganti bahasa">
+    <span class="lang-toggle-option" data-lang-option="en">EN</span>
+    <span class="lang-toggle-option" data-lang-option="id">ID</span>
+  </button>
+
+  <!--
+    - #PRELOADER
+  -->
+
+  <div class="preloader" id="preloader">
+    <div class="preloader-inner">
+      <span class="preloader-word" id="preloaderWord">Hello</span>
+      <div class="preloader-bar"><span class="preloader-bar-fill" id="preloaderFill"></span></div>
+    </div>
+  </div>
 
   <!--
     - #MAIN
@@ -46,13 +66,15 @@
         </figure>
 
         <div class="info-content">
-          <h1 class="name" title="Richard hanrick">Hello, I'm Hisyam</h1>
+          <h1 class="name" title="Richard hanrick">
+            <span data-lang="en">Hello, I'm Hisyam</span><span data-lang="id" hidden>Halo, saya Hisyam</span>
+          </h1>
 
           <p class="title">Dwi Muhamad Hisyam</p>
         </div>
 
         <button class="info_more-btn" data-sidebar-btn>
-          <span>Show Contacts</span>
+          <span><span data-lang="en">Show Contacts</span><span data-lang="id" hidden>Tampilkan Kontak</span></span>
 
           <ion-icon name="chevron-down"></ion-icon>
         </button>
@@ -72,7 +94,7 @@
             </div>
 
             <div class="contact-info">
-              <p class="contact-title">Email</p>
+              <p class="contact-title"><span data-lang="en">Email</span><span data-lang="id" hidden>Email</span></p>
 
               <a href="mailto:dwimuhamadhisyam@gmail.com" class="contact-link">dwimuhamadhisyam@gmail.com</a>
             </div>
@@ -86,7 +108,7 @@
             </div>
 
             <div class="contact-info">
-              <p class="contact-title">Phone</p>
+              <p class="contact-title"><span data-lang="en">Phone</span><span data-lang="id" hidden>Telepon</span></p>
 
               <a href="https://wa.me/62895395106877" class="contact-link">0895395106877</a>
             </div>
@@ -100,9 +122,9 @@
             </div>
 
             <div class="contact-info">
-              <p class="contact-title">Birthday</p>
+              <p class="contact-title"><span data-lang="en">Birthday</span><span data-lang="id" hidden>Tanggal Lahir</span></p>
 
-              <time datetime="1982-06-23">February 16, 2001</time>
+              <time datetime="1982-06-23"><span data-lang="en">February 16, 2001</span><span data-lang="id" hidden>16 Februari 2001</span></time>
             </div>
 
           </li>
@@ -114,9 +136,9 @@
             </div>
 
             <div class="contact-info">
-              <p class="contact-title">Location</p>
+              <p class="contact-title"><span data-lang="en">Location</span><span data-lang="id" hidden>Lokasi</span></p>
 
-              <address>No. 1 Hayam Wuruk Street, Wlingi, Blitar</address>
+              <address><span data-lang="en">No. 1 Hayam Wuruk Street, Wlingi, Blitar</span><span data-lang="id" hidden>Jl. Hayam Wuruk No. 1, Wlingi, Blitar</span></address>
             </div>
 
           </li>
@@ -164,15 +186,19 @@
         <ul class="navbar-list">
 
           <li class="navbar-item">
-            <button class="navbar-link  active" data-nav-link>About</button>
+            <button class="navbar-link  active" data-nav-link data-page-target="about"><span data-lang="en">About</span><span data-lang="id" hidden>Tentang</span></button>
           </li>
 
           <li class="navbar-item">
-            <button class="navbar-link" data-nav-link>Resume</button>
+            <button class="navbar-link" data-nav-link data-page-target="resume"><span data-lang="en">Resume</span><span data-lang="id" hidden>Ringkasan</span></button>
           </li>
 
           <li class="navbar-item">
-            <button class="navbar-link" data-nav-link>Portfolio</button>
+            <button class="navbar-link" data-nav-link data-page-target="skills"><span data-lang="en">Skills</span><span data-lang="id" hidden>Keahlian</span></button>
+          </li>
+
+          <li class="navbar-item">
+            <button class="navbar-link" data-nav-link data-page-target="portfolio"><span data-lang="en">Portfolio</span><span data-lang="id" hidden>Portofolio</span></button>
           </li>
 <!--
           <li class="navbar-item">
@@ -180,7 +206,7 @@
           </li>
 -->
           <li class="navbar-item">
-            <button class="navbar-link" data-nav-link>Contact</button>
+            <button class="navbar-link" data-nav-link data-page-target="contact"><span data-lang="en">Contact</span><span data-lang="id" hidden>Kontak</span></button>
           </li>
 
         </ul>
@@ -198,12 +224,15 @@
       <article class="about  active" data-page="about">
 
         <header>
-          <h2 class="h2 article-title">About me</h2>
+          <h2 class="h2 article-title"><span data-lang="en">About me</span><span data-lang="id" hidden>Tentang saya</span></h2>
         </header>
 
         <section class="about-text">
-          <p>
+          <p data-lang="en">
              I am an undergraduate Computer Science student with a vocational high school background in Computer and Network Engineering. I have a strong interest in the IT field, including hardware, programming, and systems development. While my main focus is technology, I am also open to exploring other fields and willing to take on new challenges. I am a fast learner, adaptable, and enjoy working both independently and in a team environment
+          </p>
+          <p data-lang="id" hidden>
+             Saya adalah mahasiswa S1 Ilmu Komputer dengan latar belakang SMK jurusan Teknik Komputer dan Jaringan. Saya memiliki minat yang besar di bidang IT, mulai dari hardware, pemrograman, hingga pengembangan sistem. Meski fokus utama saya di bidang teknologi, saya juga terbuka untuk mengeksplorasi bidang lain dan siap menghadapi tantangan baru. Saya cepat belajar, mudah beradaptasi, dan senang bekerja baik secara mandiri maupun dalam tim.
           </p>
         </section>
 
@@ -275,7 +304,7 @@
       <article class="resume" data-page="resume">
 
         <header>
-          <h2 class="h2 article-title">Resume</h2>
+          <h2 class="h2 article-title"><span data-lang="en">Resume</span><span data-lang="id" hidden>Ringkasan</span></h2>
         </header>
 
         <section class="timeline">
@@ -285,7 +314,124 @@
               <ion-icon name="book-outline"></ion-icon>
             </div>
 
-            <h3 class="h3">Education</h3>
+            <h3 class="h3"><span data-lang="en">Experience</span><span data-lang="id" hidden>Pengalaman</span></h3>
+          </div>
+
+          <ol class="timeline-list">
+
+            <li class="timeline-item">
+
+              <h4 class="h4 timeline-item-title">
+                <span data-lang="en">Administrative Staff | Koperasi Jaya Tangguh Ekonomi</span>
+                <span data-lang="id" hidden>Staf Administrasi | Koperasi Jaya Tangguh Ekonomi</span>
+              </h4>
+
+              <span><span data-lang="en">January 2025 — September 2026</span><span data-lang="id" hidden>Januari 2025 — September 2026</span></span>
+
+              <p class="timeline-text">
+                <ul class="timeline-text" data-lang="en">
+                  <li>• Managed and documented membership and administrative data systematically in compliance with SOPs</li>
+                  <li>• Delivered friendly and professional customer service</li>
+                </ul>
+                <ul class="timeline-text" data-lang="id" hidden>
+                  <li>• Mengelola dan mendokumentasikan data keanggotaan serta administrasi secara terstruktur dan sistematis sesuai SOP</li>
+                  <li>• Melakukan pelayanan terhadap nasabah dengan ramah</li>
+                </ul>
+
+              </p>
+
+            </li>
+
+            <li class="timeline-item">
+
+              <h4 class="h4 timeline-item-title">
+                <span data-lang="en">Graphic Designer | Delvia Digital Printing</span>
+                <span data-lang="id" hidden>Desainer Grafis | Delvia Digital Printing</span>
+              </h4>
+
+              <span><span data-lang="en">August 2023 — December 2024</span><span data-lang="id" hidden>Agustus 2023 — Desember 2024</span></span>
+
+              <p class="timeline-text">
+                <ul class="timeline-text" data-lang="en">
+                  <li>• Design banners, brochures, invitations, and product labels according to client requests</li>
+                  <li>• Use design software such as CorelDRAW and Adobe Photoshop</li>
+                  <li>• Revise designs based on input from clients or superiors</li>
+                  <li>• Coordinate with the production team to ensure print results meet quality standards</li>
+                  <li>• Assist with the maintenance of design computers and digital printers</li>
+                </ul>
+                <ul class="timeline-text" data-lang="id" hidden>
+                  <li>• Mendesain banner, brosur, undangan, dan label produk sesuai permintaan klien</li>
+                  <li>• Menggunakan software desain seperti CorelDRAW dan Adobe Photoshop</li>
+                  <li>• Merevisi desain berdasarkan masukan dari klien atau atasan</li>
+                  <li>• Berkoordinasi dengan tim produksi agar hasil cetak sesuai standar kualitas</li>
+                  <li>• Membantu perawatan komputer desain dan printer digital</li>
+                </ul>
+              </p>
+
+            </li>
+
+            <li class="timeline-item">
+
+              <h4 class="h4 timeline-item-title">
+                <span data-lang="en">Staff (Intern) | Wlingi Sub-District Office</span>
+                <span data-lang="id" hidden>Staf (Magang) | Kantor Kecamatan Wlingi</span>
+              </h4>
+
+              <span><span data-lang="en">July - August 2022</span><span data-lang="id" hidden>Juli - Agustus 2022</span></span>
+
+              <p class="timeline-text">
+                <ul class="timeline-text" data-lang="en">
+                  <li>• Entered citizen data and managed physical archives</li>
+                  <li>• Assisted with public administrative services, including official letters and documents</li>
+                  <li>• Created and managed content for the sub-district’s official website</li>
+                  <li>• Performed basic troubleshooting on office computer equipment</li>
+                </ul>
+                <ul class="timeline-text" data-lang="id" hidden>
+                  <li>• Menginput data warga dan mengelola arsip fisik</li>
+                  <li>• Membantu pelayanan administrasi publik, termasuk surat dan dokumen resmi</li>
+                  <li>• Membuat dan mengelola konten untuk website resmi kecamatan</li>
+                  <li>• Melakukan troubleshooting dasar pada perangkat komputer kantor</li>
+                </ul>
+              </p>
+
+            </li>
+
+            <li class="timeline-item">
+
+              <h4 class="h4 timeline-item-title">
+                <span data-lang="en">Network Technician (Intern) | PT. Telkom Indonesia (Kesamben Unit)</span>
+                <span data-lang="id" hidden>Teknisi Jaringan (Magang) | PT. Telkom Indonesia (Unit Kesamben)</span>
+              </h4>
+
+              <span><span data-lang="en">December 2017 - May 2018</span><span data-lang="id" hidden>Desember 2017 - Mei 2018</span></span>
+
+              <p class="timeline-text">
+                <ul class="timeline-text" data-lang="en">
+                  <li>• Installed WiFi and fiber optic networks at customer residences</li>
+                  <li>• Checked network connections and resolved connectivity issues</li>
+                  <li>• Learned to operate technical networking tools and followed workplace safety standards</li>
+                </ul>
+                <ul class="timeline-text" data-lang="id" hidden>
+                  <li>• Memasang jaringan WiFi dan fiber optik di rumah pelanggan</li>
+                  <li>• Memeriksa koneksi jaringan dan menyelesaikan masalah konektivitas</li>
+                  <li>• Mempelajari pengoperasian alat teknis jaringan dan mengikuti standar keselamatan kerja</li>
+                </ul>
+              </p>
+
+            </li>
+
+          </ol>
+
+        </section>
+
+                <section class="timeline">
+
+          <div class="title-wrapper">
+            <div class="icon-box">
+              <ion-icon name="book-outline"></ion-icon>
+            </div>
+
+            <h3 class="h3"><span data-lang="en">Education</span><span data-lang="id" hidden>Pendidikan</span></h3>
           </div>
 
           <ol class="timeline-list">
@@ -294,15 +440,22 @@
 
               <h4 class="h4 timeline-item-title"> University of Nahdlatul Ulama Blitar</h4>
 
-              <span>Computer Science (2019 — 2023)</span>
+              <span><span data-lang="en">Computer Science (2019 — 2023)</span><span data-lang="id" hidden>Ilmu Komputer (2019 — 2023)</span></span>
 
               <p class="timeline-text">
-                <ul class="timeline-text">
+                <ul class="timeline-text" data-lang="en">
                   <li>• IT Support and PC Troubleshooting</li>
                   <li>• Basic Electronics and Digital</li>
                   <li>• Web Programming</li>
                   <li>• Data Mining</li>
                   <li>• Robotic</li>
+                </ul>
+                <ul class="timeline-text" data-lang="id" hidden>
+                  <li>• Dukungan IT dan Troubleshooting PC</li>
+                  <li>• Dasar Elektronika dan Digital</li>
+                  <li>• Pemrograman Web</li>
+                  <li>• Data Mining</li>
+                  <li>• Robotika</li>
                 </ul>
               </p>
 
@@ -312,101 +465,22 @@
 
               <h4 class="h4 timeline-item-title">SMK PGRI Wlingi</h4>
 
-              <span>Computer and Network Engineering (2016 — 2019)</span>
+              <span><span data-lang="en">Computer and Network Engineering (2016 — 2019)</span><span data-lang="id" hidden>Teknik Komputer dan Jaringan (2016 — 2019)</span></span>
 
               <p class="timeline-text">
-                <ul class="timeline-text">
+                <ul class="timeline-text" data-lang="en">
                   <li>• Computer Assembly</li>
                   <li>• Network Operating Systems</li>
                   <li>• Network Design and Implementation</li>
                   <li>• Network Troubleshooting</li>
                   <li>• Server Administration</li>
                 </ul>
-              </p>
-
-            </li>
-
-          </ol>
-
-        </section>
-
-        <section class="timeline">
-
-          <div class="title-wrapper">
-            <div class="icon-box">
-              <ion-icon name="book-outline"></ion-icon>
-            </div>
-
-            <h3 class="h3">Experience</h3>
-          </div>
-
-          <ol class="timeline-list">
-
-            <li class="timeline-item">
-
-              <h4 class="h4 timeline-item-title">Administrative Staff & IT Support | Koperasi Jaya Tangguh Ekonomi</h4>
-
-              <span>January 2025 — Present</span>
-
-              <p class="timeline-text">
-                <ul class="timeline-text">
-                  <li>• Perform repairs and maintenance of IT devices in the company environment</li>
-                  <li>• Record details of problems, causes, solutions, and time of resolution of disruptions to IT devices</li>
-                  <li>• Recording new member data, Updating member information, Storing savings, and transaction data</li>
-                  <li>• Creating simple financial reports</li>
-                  <li>• Entering data into Excel</li>
-                </ul>
-
-              </p>
-
-            </li>
-
-            <li class="timeline-item">
-
-              <h4 class="h4 timeline-item-title">Graphic Designer | Delvia Digital Printing</h4>
-
-              <span>August 2023 — December 2024</span>
-
-              <p class="timeline-text">
-                <ul class="timeline-text">
-                  <li>• Design banners, brochures, invitations, and product labels according to client requests</li>
-                  <li>• Use design software such as CorelDRAW and Adobe Photoshop</li>
-                  <li>• Revise designs based on input from clients or superiors</li>
-                  <li>• Coordinate with the production team to ensure print results meet quality standards</li>
-                  <li>• Assist with the maintenance of design computers and digital printers</li>
-                </ul>
-              </p>
-
-            </li>
-
-            <li class="timeline-item">
-
-              <h4 class="h4 timeline-item-title">Staff (Intern) | Wlingi Sub-District Office</h4>
-
-              <span>July - August 2022</span>
-
-              <p class="timeline-text">
-                <ul class="timeline-text">
-                  <li>• Entered citizen data and managed physical archives</li>
-                  <li>• Assisted with public administrative services, including official letters and documents</li>
-                  <li>• Created and managed content for the sub-district’s official website</li>
-                  <li>• Performed basic troubleshooting on office computer equipment</li>
-                </ul>
-              </p>
-
-            </li>
-
-            <li class="timeline-item">
-
-              <h4 class="h4 timeline-item-title">Network Technician (Intern) | PT. Telkom Indonesia (Kesamben Unit)</h4>
-
-              <span>December 2017 - May 2018</span>
-
-              <p class="timeline-text">
-                <ul class="timeline-text">
-                  <li>• Installed WiFi and fiber optic networks at customer residences</li>
-                  <li>• Checked network connections and resolved connectivity issues</li>
-                  <li>• Learned to operate technical networking tools and followed workplace safety standards</li>
+                <ul class="timeline-text" data-lang="id" hidden>
+                  <li>• Perakitan Komputer</li>
+                  <li>• Sistem Operasi Jaringan</li>
+                  <li>• Desain dan Implementasi Jaringan</li>
+                  <li>• Troubleshooting Jaringan</li>
+                  <li>• Administrasi Server</li>
                 </ul>
               </p>
 
@@ -414,39 +488,80 @@
 
           </ol>
 
-        </section>
-
-        <section class="service">
-          <h3 class="h3 skills-title">My skills</h3>
-          <ul class="service-list">
-            <li class="service-item">
-              <div class="service-content-box">
-                <ul class="timeline-text">
-                  <li>◆ Troubleshooting software & hardware computer</li>
-                  <li>◆ Programmer ( HTML, CSS, JS, Python)</li>
-                  <li>◆ Microsoft Office (Excel, Word, PowerPoint)</li>
-                  <li>◆ Operating system installation (Windows, Linux)</li>
-                </ul>
-
-              </div>
-            </li>
-
-            <li class="service-item">
-              <div class="service-content-box">
-                <ul class="timeline-text">
-                  <li>◆ Time management</li>
-                  <li>◆ Detailed and thorough</li>
-                  <li>◆ Responsibility and communication</li>
-                  <li>◆ Problem solving</li>
-                  <li>◆ Team and individual work</li>
-                </ul>
-
-              </div>
-            </li>
-          </ul>
         </section>
 
       </article>
+
+
+
+
+
+
+      <!--
+        - #skills
+      -->
+
+      <article class="skills" data-page="skills">
+
+        <header>
+          <h2 class="h2 article-title"><span data-lang="en">Skills</span><span data-lang="id" hidden>Keahlian</span></h2>
+        </header>
+
+
+          <div class="skills-grid">
+
+            <div class="skill-group">
+              <h4 class="skill-group-title"><span data-lang="en">Programming</span><span data-lang="id" hidden>Pemrograman</span></h4>
+              <div class="skill-chips">
+                <span class="skill-chip">HTML</span>
+                <span class="skill-chip">CSS</span>
+                <span class="skill-chip">JavaScript</span>
+                <span class="skill-chip">PHP</span>
+                <span class="skill-chip">Bootstrap</span>
+                <span class="skill-chip">Python</span>
+                <span class="skill-chip">Django</span>
+              </div>
+            </div>
+
+            <div class="skill-group">
+              <h4 class="skill-group-title"><span data-lang="en">Systems & Hardware</span><span data-lang="id" hidden>Sistem & Perangkat Keras</span></h4>
+              <div class="skill-chips">
+                <span class="skill-chip"><span data-lang="en">Software Troubleshooting</span><span data-lang="id" hidden>Troubleshooting Software</span></span>
+                <span class="skill-chip"><span data-lang="en">Hardware Troubleshooting</span><span data-lang="id" hidden>Troubleshooting Hardware</span></span>
+                <span class="skill-chip"><span data-lang="en">OS Installation (Windows, Linux)</span><span data-lang="id" hidden>Instalasi OS (Windows, Linux)</span></span>
+              </div>
+            </div>
+
+            <div class="skill-group">
+              <h4 class="skill-group-title"><span data-lang="en">Office & Productivity</span><span data-lang="id" hidden>Kantor & Produktivitas</span></h4>
+              <div class="skill-chips">
+                <span class="skill-chip">Microsoft Excel</span>
+                <span class="skill-chip">Microsoft Word</span>
+                <span class="skill-chip">Microsoft PowerPoint</span>
+                <span class="skill-chip">CorelDraw</span>
+                <span class="skill-chip">Canva</span>
+                <span class="skill-chip">Photoshop</span>
+              </div>
+            </div>
+
+            <div class="skill-group">
+              <h4 class="skill-group-title">Soft Skills</h4>
+              <div class="skill-chips">
+                <span class="skill-chip"><span data-lang="en">Time Management</span><span data-lang="id" hidden>Manajemen Waktu</span></span>
+                <span class="skill-chip"><span data-lang="en">Detail-Oriented</span><span data-lang="id" hidden>Teliti</span></span>
+                <span class="skill-chip"><span data-lang="en">Responsibility & Communication</span><span data-lang="id" hidden>Tanggung Jawab & Komunikasi</span></span>
+                <span class="skill-chip"><span data-lang="en">Problem Solving</span><span data-lang="id" hidden>Pemecahan Masalah</span></span>
+                <span class="skill-chip"><span data-lang="en">Teamwork and Individual Work</span><span data-lang="id" hidden>Kerja Tim dan Kerja Individual</span></span>
+              </div>
+            </div>
+
+          </div>
+        </section>
+
+      </article>
+
+
+
 
 
 
@@ -459,24 +574,25 @@
       <article class="portfolio" data-page="portfolio">
 
         <header>
-          <h2 class="h2 article-title">Portfolio</h2>
+          <h2 class="h2 article-title"><span data-lang="en">Portfolio</span><span data-lang="id" hidden>Portofolio</span></h2>
         </header>
 
         <section class="projects">
 
-          <div class="filter-select-box">
-
-            <button class="filter-select" data-select>
-
-
-            </button>
-
-          </div>
-
           <ul class="project-list">
 
             <li class="project-item  active" data-filter-item data-category="web development">
-              <a href="https://hisyam16-streamlit-sms-stream-nlp-h1wc4t.streamlit.app">
+              <div class="project-item-link" data-project-item tabindex="0" role="button"
+                data-title="Fraud SMS Detection App"
+                data-img="./assets/images/project-1.jpeg"
+                data-category-en="Fraud SMS detection app built using the Python programming language"
+                data-category-id="Aplikasi pendeteksi SMS penipuan menggunakan bahasa pemrograman Python"
+                data-tech="Python, NLP, Scikit-learn, Streamlit"
+                data-desc-en="A web-based application that detects whether an SMS message is fraudulent, using a Natural Language Processing (NLP) model trained on text data. Built with Python and served through an interactive Streamlit interface, so users simply enter the SMS text and instantly get a prediction along with its confidence level."
+                data-desc-id="Aplikasi berbasis web yang mendeteksi apakah sebuah pesan SMS termasuk penipuan (fraud) atau bukan, menggunakan model Natural Language Processing (NLP) yang dilatih dengan data teks. Dibangun dengan Python dan disajikan lewat antarmuka interaktif menggunakan Streamlit, sehingga pengguna cukup memasukkan teks SMS dan langsung mendapatkan hasil prediksi beserta tingkat keyakinannya."
+                data-link="https://hisyam16-streamlit-sms-stream-nlp-h1wc4t.streamlit.app"
+                data-link-label-en="Try Live Demo"
+                data-link-label-id="Coba Live Demo">
 
                 <figure class="project-img">
                   <div class="project-item-icon-box">
@@ -488,13 +604,24 @@
 
                 <h3 class="project-title">Fraud SMS Detection App</h3>
 
-                <p class="project-category">Aplikasi pendeteksi SMS penipuan menggunakan bahasa pemrograman Python</p>
+                <p class="project-category">
+                  <span data-lang="en">Fraud SMS detection app built using the Python programming language</span>
+                  <span data-lang="id" hidden>Aplikasi pendeteksi SMS penipuan menggunakan bahasa pemrograman Python</span>
+                </p>
 
-              </a>
+              </div>
             </li>
 
             <li class="project-item  active" data-filter-item data-category="web development">
-              <a href="#">
+              <div class="project-item-link" data-project-item tabindex="0" role="button"
+                data-title-en="Digital Ruler"
+                data-title-id="Penggaris Digital"
+                data-img="./assets/images/project-2.png"
+                data-category-en="Using ESP32 and an ultrasonic sensor"
+                data-category-id="Menggunakan ESP32 dan sensor ultrasonic"
+                data-tech="ESP32, Sensor Ultrasonic HC-SR04, LCD Display, Arduino IDE (C/C++)"
+                data-desc-en="A digital distance-measuring device that uses an HC-SR04 ultrasonic sensor to detect the distance of an object, processed by an ESP32 microcontroller, with the measurement displayed in real time on an LCD screen. This project combines embedded systems programming with simple sensor instrumentation."
+                data-desc-id="Alat pengukur jarak digital yang memanfaatkan sensor ultrasonic HC-SR04 untuk mendeteksi jarak benda, diproses oleh mikrokontroler ESP32, lalu hasil pengukurannya ditampilkan secara real-time pada layar LCD. Proyek ini menggabungkan pemrograman embedded system dengan instrumentasi sensor sederhana.">
 
                 <figure class="project-img">
                   <div class="project-item-icon-box">
@@ -504,16 +631,33 @@
                   <img src="./assets/images/project-2.png" alt="orizon" loading="lazy">
                 </figure>
 
-                <h3 class="project-title">Penggaris digital</h3>
+                <h3 class="project-title">
+                  <span data-lang="en">Digital Ruler</span>
+                  <span data-lang="id" hidden>Penggaris Digital</span>
+                </h3>
 
-                <p class="project-category">Menggunakan ESP32 dan sensor ultrasonic</p>
+                <p class="project-category">
+                  <span data-lang="en">Using ESP32 and an ultrasonic sensor</span>
+                  <span data-lang="id" hidden>Menggunakan ESP32 dan sensor ultrasonic</span>
+                </p>
 
-              </a>
+              </div>
             </li>
 
 
             <li class="project-item  active" data-filter-item data-category="web development">
-              <a href="https://youtube.com/shorts/TSjf8EoRz-Q?feature=share">
+              <div class="project-item-link" data-project-item tabindex="0" role="button"
+                data-title-en="Radar Sensors"
+                data-title-id="Sensor Radar"
+                data-img="./assets/images/project-3.png"
+                data-category-en="Using an Arduino Uno and an ultrasonic sensor"
+                data-category-id="Menggunakan arduino uno dan sensor ultrasonic"
+                data-tech="Arduino Uno, Sensor Ultrasonic, Servo Motor, Arduino IDE"
+                data-desc-en="A simple radar system that simulates area scanning using an ultrasonic sensor mounted on a servo motor, controlled by an Arduino Uno. Distance and scan-angle data are visualized in real time, resembling a typical radar display."
+                data-desc-id="Sistem radar sederhana yang mensimulasikan pemindaian area menggunakan sensor ultrasonic yang dipasang pada motor servo, dikendalikan oleh Arduino Uno. Data jarak dan sudut pemindaian divisualisasikan secara real-time, menyerupai tampilan radar pada umumnya."
+                data-link="https://youtube.com/shorts/TSjf8EoRz-Q?feature=share"
+                data-link-label-en="Watch Video"
+                data-link-label-id="Tonton Video">
 
                 <figure class="project-img">
                   <div class="project-item-icon-box">
@@ -523,14 +667,63 @@
                   <img src="./assets/images/project-3.png" alt="orizon" loading="lazy">
                 </figure>
 
-                <h3 class="project-title">Radar sensors</h3>
+                <h3 class="project-title">
+                  <span data-lang="en">Radar Sensors</span>
+                  <span data-lang="id" hidden>Sensor Radar</span>
+                </h3>
 
-                <p class="project-category">Menggunakan arduino uno dan sensor ultrasonic</p>
+                <p class="project-category">
+                  <span data-lang="en">Using an Arduino Uno and an ultrasonic sensor</span>
+                  <span data-lang="id" hidden>Menggunakan arduino uno dan sensor ultrasonic</span>
+                </p>
 
-              </a>
+              </div>
             </li>
 
           </ul>
+
+          <!--
+            - project detail modal
+          -->
+
+          <div class="modal-container" data-project-modal-container>
+
+            <div class="overlay" data-project-overlay></div>
+
+            <section class="project-modal">
+
+              <button class="modal-close-btn" data-project-modal-close-btn>
+                <ion-icon name="close-outline"></ion-icon>
+              </button>
+
+              <figure class="project-modal-img-wrapper">
+                <img src="" alt="" data-project-modal-img>
+              </figure>
+
+              <div class="modal-content project-modal-content">
+
+                <h4 class="h3 modal-title" data-project-modal-title></h4>
+
+                <p class="project-modal-category" data-project-modal-category></p>
+
+                <div class="project-modal-tech" data-project-modal-tech></div>
+
+                <div data-project-modal-text>
+                  <p></p>
+                </div>
+
+                <div class="project-modal-actions" data-project-modal-actions>
+                  <a class="project-modal-link" data-project-modal-link href="#" target="_blank" rel="noopener">
+                    <ion-icon name="open-outline"></ion-icon>
+                    <span data-project-modal-link-label>Live Demo</span>
+                  </a>
+                </div>
+
+              </div>
+
+            </section>
+
+          </div>
 
         </section>
 
@@ -739,7 +932,7 @@
       <article class="contact" data-page="contact">
 
         <header>
-          <h2 class="h2 article-title">Contact</h2>
+          <h2 class="h2 article-title"><span data-lang="en">Contact</span><span data-lang="id" hidden>Kontak</span></h2>
         </header>
 
         <section class="mapbox" data-mapbox>
